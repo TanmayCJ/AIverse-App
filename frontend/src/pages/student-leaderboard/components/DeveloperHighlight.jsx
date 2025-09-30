@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion as Motion } from 'framer-motion';
 
 import Icon from '../../../components/AppIcon';
 import Image from '../../../components/AppImage';
@@ -38,7 +38,7 @@ const DeveloperHighlight = ({ developer, type, rank }) => {
   const config = getTypeConfig();
 
   return (
-    <motion.div
+    <Motion.div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: rank * 0.1 }}
@@ -142,6 +142,13 @@ const DeveloperHighlight = ({ developer, type, rank }) => {
           iconName="ExternalLink"
           iconPosition="right"
           className="flex-1"
+          onClick={() => {
+            const url = developer?.githubUrl;
+            if (url) {
+              window.open(url, '_blank', 'noopener,noreferrer');
+            }
+          }}
+          disabled={!developer?.githubUrl}
         >
           Profile
         </Button>
@@ -150,7 +157,7 @@ const DeveloperHighlight = ({ developer, type, rank }) => {
       <div className="absolute top-4 right-4 opacity-10">
         <Icon name="Sparkles" size={32} className="text-primary" />
       </div>
-    </motion.div>
+    </Motion.div>
   );
 };
 

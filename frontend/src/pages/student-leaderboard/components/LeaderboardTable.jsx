@@ -13,7 +13,6 @@ const LeaderboardTable = ({ students, period, onPeriodChange }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 20;
 
-  // Filter and sort students
   const filteredAndSortedStudents = useMemo(() => {
     let filtered = students?.filter(student =>
       student?.name?.toLowerCase()?.includes(searchQuery?.toLowerCase()) ||

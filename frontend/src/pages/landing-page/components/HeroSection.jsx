@@ -1,9 +1,10 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion as Motion } from 'framer-motion';
 
 import { useNavigate } from 'react-router-dom';
 import Icon from '../../../components/AppIcon';
 import Button from '../../../components/ui/Button';
+import Logo from '../../../components/Logo';
 
 const HeroSection = () => {
   const navigate = useNavigate();
@@ -48,18 +49,18 @@ const HeroSection = () => {
         <div className="gradient-mesh absolute -bottom-40 -left-40 w-96 h-96 rounded-full opacity-15 blur-3xl"></div>
         
         {/* Floating Geometric Shapes */}
-        <motion.div
+        <Motion.div
           variants={floatingVariants}
           animate="animate"
           className="absolute top-20 left-20 w-16 h-16 border border-primary/30 rounded-lg backdrop-blur-sm"
         />
-        <motion.div
+        <Motion.div
           variants={floatingVariants}
           animate="animate"
           style={{ animationDelay: '2s' }}
           className="absolute top-40 right-32 w-12 h-12 bg-secondary/20 rounded-full backdrop-blur-sm"
         />
-        <motion.div
+        <Motion.div
           variants={floatingVariants}
           animate="animate"
           style={{ animationDelay: '4s' }}
@@ -67,28 +68,23 @@ const HeroSection = () => {
         />
       </div>
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <motion.div
+        <Motion.div
           variants={containerVariants}
           initial="hidden"
           animate="visible"
           className="space-y-8"
         >
           {/* Logo and Brand */}
-          <motion.div variants={itemVariants} className="flex items-center justify-center space-x-4 mb-8">
-            <div className="relative">
-              <div className="w-20 h-20 bg-gradient-to-br from-primary to-secondary rounded-2xl flex items-center justify-center shadow-glow-primary">
-                <Icon name="Zap" size={40} className="text-white" />
-              </div>
-              <div className="absolute -top-2 -right-2 w-6 h-6 bg-accent rounded-full animate-pulse-glow"></div>
-            </div>
-            <div className="text-left">
-              <h1 className="text-4xl font-bold text-gradient-primary">AIverse</h1>
-              <p className="text-text-secondary text-lg">Frontend</p>
-            </div>
-          </motion.div>
+          <Motion.div variants={itemVariants} className="flex items-center justify-center mb-8">
+            <Logo 
+              size="xlarge" 
+              showText={false}
+              className="justify-center"
+            />
+          </Motion.div>
 
           {/* Main Heading */}
-          <motion.div variants={itemVariants} className="space-y-6">
+          <Motion.div variants={itemVariants} className="space-y-6">
             <h2 className="text-5xl md:text-7xl font-bold text-text-primary leading-tight">
               Unlock Your
               <span className="text-gradient-primary block">AI Potential</span>
@@ -96,10 +92,10 @@ const HeroSection = () => {
             <p className="text-xl md:text-2xl text-text-secondary max-w-3xl mx-auto leading-relaxed">
               Join the ultimate AI community platform where students compete, learn, and grow together through challenges, events, and cutting-edge technical content.
             </p>
-          </motion.div>
+          </Motion.div>
 
           {/* Statistics */}
-          <motion.div variants={itemVariants} className="flex flex-wrap justify-center gap-8 py-8">
+          <Motion.div variants={itemVariants} className="flex flex-wrap justify-center gap-8 py-8">
             <div className="glass-card text-center min-w-[120px]">
               <div className="text-3xl font-bold text-gradient-primary">2,500+</div>
               <div className="text-text-secondary">Active Students</div>
@@ -112,10 +108,10 @@ const HeroSection = () => {
               <div className="text-3xl font-bold text-gradient-primary">50+</div>
               <div className="text-text-secondary">Weekly Challenges</div>
             </div>
-          </motion.div>
+          </Motion.div>
 
           {/* Call-to-Action Buttons */}
-          <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-6 justify-center items-center pt-8">
+          <Motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-6 justify-center items-center pt-8">
             <Button
               variant="default"
               size="lg"
@@ -148,23 +144,23 @@ const HeroSection = () => {
             >
               Weekly Challenges
             </Button>
-          </motion.div>
+          </Motion.div>
 
           {/* Scroll Indicator */}
-          <motion.div
+          <Motion.div
             variants={itemVariants}
             className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
           >
-            <motion.div
+            <Motion.div
               animate={{ y: [0, 10, 0] }}
               transition={{ duration: 2, repeat: Infinity }}
               className="flex flex-col items-center space-y-2 text-text-secondary"
             >
               <span className="text-sm">Scroll to explore</span>
               <Icon name="ChevronDown" size={20} />
-            </motion.div>
-          </motion.div>
-        </motion.div>
+            </Motion.div>
+          </Motion.div>
+        </Motion.div>
       </div>
     </section>
   );

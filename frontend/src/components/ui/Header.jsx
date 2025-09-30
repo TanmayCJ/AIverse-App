@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import Icon from '../AppIcon';
 import Button from './Button';
+import Logo from '../Logo';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -97,18 +98,11 @@ const Header = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
-          <div className="flex items-center space-x-3 cursor-pointer" onClick={() => navigate('/landing-page')}>
-            <div className="relative">
-              <div className="w-10 h-10 bg-gradient-to-br from-primary to-secondary rounded-xl flex items-center justify-center shadow-glow-primary">
-                <Icon name="Zap" size={24} className="text-white" />
-              </div>
-              <div className="absolute -top-1 -right-1 w-4 h-4 bg-accent rounded-full animate-pulse-glow"></div>
-            </div>
-            <div className="hidden sm:block">
-              <h1 className="text-xl font-bold text-gradient-primary">AIverse</h1>
-              <p className="text-xs text-text-secondary -mt-1">Frontend</p>
-            </div>
-          </div>
+          <Logo 
+            size="medium" 
+            showText={false}
+            onClick={() => navigate('/landing-page')}
+          />
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-1">
