@@ -8,10 +8,10 @@ const Logo = ({
   onClick,
 }) => {
   const sizeConfig = {
-    small:  { logoSize: 40,  textSize: '16px', glowBlur: 10 },
-    medium: { logoSize: 64,  textSize: '20px', glowBlur: 14 },
-    large:  { logoSize: 120, textSize: '32px', glowBlur: 20 },
-    xlarge: { logoSize: 160, textSize: '48px', glowBlur: 26 },
+    small:  { logoSize: 40,  textSize: '16px', },
+    medium: { logoSize: 64,  textSize: '20px', },
+    large:  { logoSize: 120, textSize: '32px',  },
+    xlarge: { logoSize: 160, textSize: '48px',},
   };
 
   const config = sizeConfig[size] || sizeConfig.medium;
@@ -30,36 +30,21 @@ const Logo = ({
       }}
       aria-label="AIverse logo"
     >
-      {/* Neon glow container (keeps PNG intact) */}
-      <div className="relative inline-block" style={{ width: config.logoSize }}>
-        {/* Back glow aura */}
-        <div
-          className="absolute inset-0 -z-10 rounded-xl animate-pulse"
-          style={{
-            background: 'radial-gradient(circle at 50% 45%, rgba(0, 240, 255, 0.45) 0%, rgba(6, 182, 212, 0.25) 35%, transparent 70%)',
-            filter: `blur(${config.glowBlur}px)`,
-            opacity: 0.9,
-          }}
-        />
-
-        {/* Edge neon by drop-shadows on the image */}
-        <img
-          src={aiLogo}
-          alt="AIverse logo"
-          draggable="false"
-          style={{
-            width: '100%',
-            height: 'auto',
-            display: 'block',
-            userSelect: 'none',
-            filter: [
-              'drop-shadow(0 0 6px rgba(0, 240, 255, 0.65))',
-              'drop-shadow(0 0 12px rgba(6, 182, 212, 0.45))',
-              'drop-shadow(0 0 18px rgba(59, 130, 246, 0.35))',
-            ].join(' '),
-          }}
-        />
-      </div>
+      <img
+        src={aiLogo}
+        alt="AIverse logo"
+        draggable="false"
+        style={{
+          width: config.logoSize,
+          height: config.logoSize,
+          display: 'block',
+          userSelect: 'none',
+          filter: 'none',
+          mixBlendMode: 'screen',
+          opacity: 0.9,
+          background: 'transparent',
+        }}
+      />
 
       {showText && (
         <span className="font-semibold" style={{ fontSize: config.textSize }}>
