@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
+import { useAuth } from '../../context/AuthContext';
 import Icon from '../AppIcon';
 import Button from './Button';
 import Logo from '../Logo';
@@ -15,16 +16,11 @@ const Header = () => {
     { id: 3, title: 'Event Reminder', message: 'AI Workshop starts in 30 minutes', time: '30 min ago', unread: false },
   ]);
   const [showNotifications, setShowNotifications] = useState(false);
-  const [user, setUser] = useState({
-    name: 'Alex Chen',
-    avatar: '/assets/images/avatar-placeholder.png',
-    isAuthenticated: true,
-    role: 'student'
-  });
   const [showUserMenu, setShowUserMenu] = useState(false);
 
   const location = useLocation();
   const navigate = useNavigate();
+  const { user, userProfile, isAuthenticated, logout } = useAuth();
 
   const navigationItems = [
     { name: 'Home', path: '/landing-page', icon: 'Home' },
@@ -84,10 +80,19 @@ const Header = () => {
     setIsMenuOpen(false);
   };
 
-  const handleLogout = () => {
-    setUser({ ...user, isAuthenticated: false });
-    setShowUserMenu(false);
-    navigate('/landing-page');
+  const handleLogout = async () => {
+    console.log('Logout button clicked');
+    try {
+      setShowUserMenu(false);
+      console.log('Calling logout function...');
+      await logout();
+      console.log('Logout successful, redirecting...');
+      // Use window.location for a full page reload to clear all state
+      window.location.href = '/landing-page';
+    } catch (error) {
+      console.error('Logout failed:', error);
+      alert('Failed to sign out: ' + error.message);
+    }
   };
 
   return (
@@ -203,7 +208,7 @@ const Header = () => {
             </div>
 
             {/* User Menu */}
-            {user?.isAuthenticated ? (
+            {isAuthenticated ? (
               <div className="relative user-menu-dropdown">
                 <button
                   onClick={() => setShowUserMenu(!showUserMenu)}
@@ -211,7 +216,7 @@ const Header = () => {
                 >
                   <div className="w-8 h-8 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center">
                     <span className="text-white text-sm font-semibold">
-                      {user?.name?.split(' ')?.map(n => n?.[0])?.join('')}
+                      {userProfile?.username?.substring(0, 2)?.toUpperCase() || user?.email?.substring(0, 2)?.toUpperCase() || 'U'}
                     </span>
                   </div>
                   <Icon name="ChevronDown" size={16} className="text-text-secondary" />
@@ -220,19 +225,37 @@ const Header = () => {
                 {showUserMenu && (
                   <div className="absolute right-0 top-12 w-56 glass rounded-xl border border-border shadow-elevated animate-modal-enter">
                     <div className="p-4 border-b border-border">
-                      <p className="font-semibold text-text-primary">{user?.name}</p>
-                      <p className="text-text-secondary text-sm capitalize">{user?.role}</p>
+                      <p className="font-semibold text-text-primary">{userProfile?.username || user?.email || 'User'}</p>
+                      <p className="text-text-secondary text-sm">Student</p>
                     </div>
                     <div className="py-2">
-                      <button className="w-full px-4 py-2 text-left text-text-secondary hover:text-text-primary hover:bg-surface/30 transition-colors flex items-center space-x-2">
+                      <button 
+                        onClick={() => {
+                          setShowUserMenu(false);
+                          navigate('/profile-integration');
+                        }}
+                        className="w-full px-4 py-2 text-left text-text-secondary hover:text-text-primary hover:bg-surface/30 transition-colors flex items-center space-x-2"
+                      >
                         <Icon name="User" size={16} />
                         <span>Profile</span>
                       </button>
-                      <button className="w-full px-4 py-2 text-left text-text-secondary hover:text-text-primary hover:bg-surface/30 transition-colors flex items-center space-x-2">
+                      <button 
+                        onClick={() => {
+                          setShowUserMenu(false);
+                          navigate('/profile-integration');
+                        }}
+                        className="w-full px-4 py-2 text-left text-text-secondary hover:text-text-primary hover:bg-surface/30 transition-colors flex items-center space-x-2"
+                      >
                         <Icon name="Settings" size={16} />
                         <span>Settings</span>
                       </button>
-                      <button className="w-full px-4 py-2 text-left text-text-secondary hover:text-text-primary hover:bg-surface/30 transition-colors flex items-center space-x-2">
+                      <button 
+                        onClick={() => {
+                          setShowUserMenu(false);
+                          navigate('/profile-integration');
+                        }}
+                        className="w-full px-4 py-2 text-left text-text-secondary hover:text-text-primary hover:bg-surface/30 transition-colors flex items-center space-x-2"
+                      >
                         <Icon name="Award" size={16} />
                         <span>Achievements</span>
                       </button>
@@ -250,10 +273,16 @@ const Header = () => {
               </div>
             ) : (
               <div className="flex items-center space-x-2">
-                <Button variant="ghost" size="sm" onClick={() => navigate('/login')}>
+                <div className="flex items-center space-x-2 text-text-secondary">
+                  <div className="w-8 h-8 bg-surface/50 border border-border rounded-full flex items-center justify-center">
+                    <Icon name="User" size={16} />
+                  </div>
+                  <span className="text-sm hidden sm:inline">Guest</span>
+                </div>
+                <Button variant="ghost" size="sm" onClick={() => navigate('/auth')}>
                   Sign In
                 </Button>
-                <Button variant="default" size="sm" onClick={() => navigate('/register')}>
+                <Button variant="default" size="sm" onClick={() => navigate('/auth')}>
                   Sign Up
                 </Button>
               </div>

@@ -9,6 +9,8 @@ import StudentLeaderboard from './pages/student-leaderboard';
 import WeeklyChallengesPage from './pages/weekly-challenges-page';
 import LandingPage from './pages/landing-page';
 import EventsPage from './pages/events-page';
+import ProfileIntegration from './pages/profile-integration';
+import AuthPage from './pages/auth';
 
 const Routes = () => {
   return (
@@ -24,6 +26,11 @@ const Routes = () => {
         <Route path="/weekly-challenges-page" element={<WeeklyChallengesPage />} />
         <Route path="/landing-page" element={<LandingPage />} />
         <Route path="/events-page" element={<EventsPage />} />
+        <Route path="/profile" element={<ProfileIntegration />} />
+        <Route path="/profile-integration" element={<ProfileIntegration />} />
+        <Route path="/auth" element={<AuthPage />} />
+        <Route path="/login" element={<AuthPage />} />
+        <Route path="/register" element={<AuthPage />} />
         <Route path="*" element={<NotFound />} />
       </RouterRoutes>
       </ErrorBoundary>

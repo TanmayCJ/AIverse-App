@@ -65,7 +65,7 @@ export const AuthProvider = ({ children }) => {
   // Register new user
   const register = async (username, email, password) => {
     try {
-      // Sign up with Supabase Auth (with email confirmation)
+      // Sign up with Supabase Auth
       const { data: authData, error: signUpError } = await supabase.auth.signUp({
         email,
         password,
@@ -73,22 +73,21 @@ export const AuthProvider = ({ children }) => {
           data: {
             username: username,
           },
-          emailRedirectTo: `${window.location.origin}/auth`,
         },
       })
 
       if (signUpError) throw signUpError
 
-      // Profile will be created automatically by database trigger
-      // Wait a moment for trigger to complete
-      await new Promise(resolve => setTimeout(resolve, 500));
+      // Create user profile
+      const { error: profileError } = await supabase.from('user_profiles').insert({
+        user_id: authData.user.id,
+        username: username,
+        email: email,
+      })
 
-      return { 
-        success: true, 
-        user: authData.user,
-        needsEmailVerification: !authData.user.confirmed_at,
-        message: 'Please check your email to verify your account before logging in.'
-      }
+      if (profileError) throw profileError
+
+      return { success: true, user: authData.user }
     } catch (error) {
       console.error('Registration error:', error)
       throw error
@@ -114,40 +113,13 @@ export const AuthProvider = ({ children }) => {
 
   // Logout user
   const logout = async () => {
-    console.log('AuthContext logout called');
     try {
-      console.log('Clearing local state immediately...');
-      // Clear state first for immediate UI update
-      setUser(null);
-      setSession(null);
-      setUserProfile(null);
-      
-      console.log('Calling supabase.auth.signOut() in background...');
-      // Call signOut and wait for it to clear localStorage
-      await supabase.auth.signOut();
-      
-      // Also manually clear any remaining Supabase data from localStorage
-      const keysToRemove = [];
-      for (let i = 0; i < localStorage.length; i++) {
-        const key = localStorage.key(i);
-        if (key && key.startsWith('sb-')) {
-          keysToRemove.push(key);
-        }
-      }
-      keysToRemove.forEach(key => localStorage.removeItem(key));
-      
-      console.log('Logout complete');
+      const { error } = await supabase.auth.signOut()
+      if (error) throw error
+      setUserProfile(null)
     } catch (error) {
-      console.error('Logout error:', error);
-      // Even if there's an error, clear localStorage
-      const keysToRemove = [];
-      for (let i = 0; i < localStorage.length; i++) {
-        const key = localStorage.key(i);
-        if (key && key.startsWith('sb-')) {
-          keysToRemove.push(key);
-        }
-      }
-      keysToRemove.forEach(key => localStorage.removeItem(key));
+      console.error('Logout error:', error)
+      throw error
     }
   }
 
