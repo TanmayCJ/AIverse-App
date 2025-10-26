@@ -28,7 +28,7 @@ const Header = () => {
     { name: 'Articles', path: '/articles-technical-news-feed', icon: 'BookOpen' },
     { name: 'Leaderboard', path: '/student-leaderboard', icon: 'Trophy' },
     { name: 'Challenges', path: '/weekly-challenges-page', icon: 'Zap' },
-    { name: 'AIverse', path: '/alverse-section', icon: 'Users' },
+    { name: 'Community', path: '/alverse-section', icon: 'Users' },
   ];
 
   useEffect(() => {

@@ -6,7 +6,6 @@ import HeroSection from './components/HeroSection';
 import ArticlePreviewSection from './components/ArticlePreviewSection';
 import FeaturesSection from './components/FeaturesSection';
 import StatsSection from './components/StatsSection';
-import TestimonialsSection from './components/TestimonialsSection';
 
 const LandingPage = () => {
   useEffect(() => {
@@ -85,11 +84,6 @@ const LandingPage = () => {
         <section id="stats">
           <StatsSection />
         </section>
-
-        {/* Testimonials Section */}
-        <section id="testimonials">
-          <TestimonialsSection />
-        </section>
       </main>
       {/* Footer */}
       <footer className="bg-background-secondary border-t border-border py-12 px-4 sm:px-6 lg:px-8">
@@ -126,7 +120,7 @@ const LandingPage = () => {
             <div>
               <h4 className="font-semibold text-text-primary mb-4">Community</h4>
               <ul className="space-y-2">
-                <li><a href="/alverse-section" className="text-text-secondary hover:text-primary transition-colors">AIverse</a></li>
+                <li><a href="/alverse-section" className="text-text-secondary hover:text-primary transition-colors">Community</a></li>
                 <li><a href="#" className="text-text-secondary hover:text-primary transition-colors">Discord</a></li>
                 <li><a href="#" className="text-text-secondary hover:text-primary transition-colors">GitHub</a></li>
                 <li><a href="#" className="text-text-secondary hover:text-primary transition-colors">LinkedIn</a></li>

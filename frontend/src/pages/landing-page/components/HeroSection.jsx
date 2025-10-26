@@ -97,11 +97,11 @@ const HeroSection = () => {
           {/* Statistics */}
           <Motion.div variants={itemVariants} className="flex flex-wrap justify-center gap-8 py-8">
             <div className="glass-card text-center min-w-[120px]">
-              <div className="text-3xl font-bold text-gradient-primary">2,500+</div>
-              <div className="text-text-secondary">Active Students</div>
+              <div className="text-3xl font-bold text-gradient-primary">1,117</div>
+              <div className="text-text-secondary">Active Members</div>
             </div>
             <div className="glass-card text-center min-w-[120px]">
-              <div className="text-3xl font-bold text-gradient-accent">150+</div>
+              <div className="text-3xl font-bold text-gradient-accent">5</div>
               <div className="text-text-secondary">Events Hosted</div>
             </div>
             <div className="glass-card text-center min-w-[120px]">

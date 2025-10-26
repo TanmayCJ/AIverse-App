@@ -12,25 +12,25 @@ const StatsSection = () => {
   });
 
   const finalStats = {
-    students: 2500,
-    events: 150,
+    students: 1117,
+    events: 5,
     challenges: 50,
-    articles: 300
+    articles: 100
   };
 
   const statsData = [
     {
       key: 'students',
       icon: 'Users',
-      label: 'Active Students',
-      suffix: '+',
+      label: 'Active Members',
+      suffix: '',
       color: 'from-primary to-primary-600'
     },
     {
       key: 'events',
       icon: 'Calendar',
       label: 'Events Hosted',
-      suffix: '+',
+      suffix: '',
       color: 'from-accent to-accent-600'
     },
     {

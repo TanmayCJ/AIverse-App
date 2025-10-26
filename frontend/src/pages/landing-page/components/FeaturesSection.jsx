@@ -14,7 +14,7 @@ const FeaturesSection = () => {
       icon: "Calendar",
       title: "AI Events & Workshops",
       description: "Join exclusive AI events, workshops, and seminars led by industry experts and researchers.",
-      stats: "150+ Events",
+      stats: "5 Events",
       color: "from-primary to-primary-600",
       route: "/events-page"
     },
@@ -23,7 +23,7 @@ const FeaturesSection = () => {
       icon: "Trophy",
       title: "Competitive Leaderboard",
       description: "Track your progress and compete with peers through our comprehensive ranking system.",
-      stats: "2,500+ Students",
+      stats: "1,117 Members",
       color: "from-accent to-accent-600",
       route: "/student-leaderboard"
     },
@@ -39,7 +39,7 @@ const FeaturesSection = () => {
     {
       id: 4,
       icon: "Users",
-      title: "AIverse Community",
+      title: "Community Hub",
       description: "Connect with like-minded AI enthusiasts, mentors, and industry professionals.",
       stats: "Active Network",
       color: "from-success to-success-600",

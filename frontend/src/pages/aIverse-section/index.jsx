@@ -8,13 +8,11 @@ import MembersGrid from './components/MembersGrid';
 import PartnersSection from './components/PartnersSection';
 
 const AlverseSection = () => {
-  const [activeTab, setActiveTab] = useState('history');
+  const [activeTab, setActiveTab] = useState('members');
   const [isLoading, setIsLoading] = useState(true);
 
   const tabs = [
-    { id: 'history', label: 'History', icon: 'Clock' },
-    { id: 'members', label: 'Members', icon: 'Users' },
-    { id: 'partners', label: 'Partners & Mentors', icon: 'Handshake' }
+    { id: 'members', label: 'Team', icon: 'Users' }
   ];
 
   useEffect(() => {
@@ -43,24 +41,15 @@ const AlverseSection = () => {
       );
     }
 
-    switch (activeTab) {
-      case 'history':
-        return <HistoryTimeline />;
-      case 'members':
-        return <MembersGrid />;
-      case 'partners':
-        return <PartnersSection />;
-      default:
-        return <HistoryTimeline />;
-    }
+    return <MembersGrid />;
   };
 
   return (
     <>
       <Helmet>
-        <title>Alverse Section - AIverse Frontend</title>
-        <meta name="description" content="Explore the AIverse community through our comprehensive sections featuring history, members, and industry partners. Discover our journey, meet our team, and learn about our collaborations." />
-        <meta name="keywords" content="AIverse, community, history, members, partners, mentors, AI education, collaboration" />
+        <title>Community - AIverse Frontend</title>
+        <meta name="description" content="Meet the passionate team members driving innovation and building the AIverse AI community. Connect with our leadership team and get involved." />
+        <meta name="keywords" content="AIverse, community, team, members, leadership, AI education, collaboration" />
       </Helmet>
       <div className="min-h-screen bg-background">
         <Header />
@@ -86,27 +75,27 @@ const AlverseSection = () => {
               
               <h1 className="text-4xl md:text-6xl font-bold text-gradient-primary mb-6">
                 Welcome to
-                <span className="block text-gradient-accent">AIverse Community</span>
+                <span className="block text-gradient-accent">Community Hub</span>
               </h1>
               
               <p className="text-xl text-text-secondary max-w-3xl mx-auto mb-8 leading-relaxed">
-                Discover our rich history, meet our passionate community members, and explore our partnerships 
-                with industry leaders and academic institutions that make AIverse a thriving ecosystem for AI innovation.
+                Meet our passionate leadership team driving innovation and building a thriving AI community. 
+                Connect with the minds behind AIverse's success and discover opportunities to get involved.
               </p>
 
               {/* Quick Stats */}
               <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto mb-12">
                 <div className="glass rounded-xl p-4 text-center">
-                  <div className="text-2xl font-bold text-primary mb-1">5+</div>
-                  <div className="text-text-secondary text-sm">Years Strong</div>
+                  <div className="text-2xl font-bold text-primary mb-1">6</div>
+                  <div className="text-text-secondary text-sm">Team Leaders</div>
                 </div>
                 <div className="glass rounded-xl p-4 text-center">
-                  <div className="text-2xl font-bold text-secondary mb-1">1000+</div>
+                  <div className="text-2xl font-bold text-secondary mb-1">1,117</div>
                   <div className="text-text-secondary text-sm">Active Members</div>
                 </div>
                 <div className="glass rounded-xl p-4 text-center">
-                  <div className="text-2xl font-bold text-accent mb-1">50+</div>
-                  <div className="text-text-secondary text-sm">Industry Partners</div>
+                  <div className="text-2xl font-bold text-accent mb-1">5</div>
+                  <div className="text-text-secondary text-sm">Events Hosted</div>
                 </div>
                 <div className="glass rounded-xl p-4 text-center">
                   <div className="text-2xl font-bold text-success mb-1">25+</div>
@@ -114,17 +103,6 @@ const AlverseSection = () => {
                 </div>
               </div>
             </div>
-          </div>
-        </section>
-
-        {/* Navigation Tabs */}
-        <section className="relative py-8">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <TabNavigation 
-              activeTab={activeTab} 
-              onTabChange={setActiveTab} 
-              tabs={tabs} 
-            />
           </div>
         </section>
 

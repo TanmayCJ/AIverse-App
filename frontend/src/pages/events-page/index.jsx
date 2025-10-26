@@ -127,7 +127,7 @@ This hands-on session will cover Git fundamentals, branching strategies, pull re
 
 The workshop includes live coding sessions, real-world scenarios, and collaborative exercises where you'll work with fellow developers to simulate industry workflows.`,
       type: "Workshop",
-      date: "2024-11-15",
+      date: "2025-11-15",
       time: "14:00",
       venue: "Computer Lab, Main Campus",
       organizer: "AIverse Team",
@@ -158,7 +158,7 @@ Experience cutting-edge AI demonstrations, participate in exciting challenges wi
 
 This flagship event will feature renowned speakers from Google, Microsoft, NVIDIA, and leading AI startups, along with exclusive internship and placement opportunities for outstanding participants.`,
       type: "Competition",
-      date: "2024-11-07",
+      date: "2025-11-07",
       time: "09:00",
       venue: "Main Auditorium & Campus-wide",
       organizer: "AIverse Team",
