@@ -29,209 +29,154 @@ const EventsPage = () => {
   const [selectedStatus, setSelectedStatus] = useState('all');
   const [sortBy, setSortBy] = useState('date-asc');
 
-  // Mock events data
+  // Real events data
   const mockEvents = [
+    // PAST EVENTS
     {
       id: 1,
-      title: "AI Workshop: Introduction to Machine Learning",
-      description: "Learn the fundamentals of machine learning with hands-on coding exercises. This workshop covers supervised learning, unsupervised learning, and neural networks basics.",
-      fullDescription: `Join us for an intensive introduction to Machine Learning workshop designed for beginners and intermediate learners. This comprehensive session will cover the theoretical foundations and practical applications of ML algorithms.
+      title: "Interviews for Non-Technical Students",
+      description: "Selection process for students from diverse academic backgrounds including School of Commerce, Management Studies, CSA, and School of Applied Sciences to join AIverse community.",
+      fullDescription: `On 9th September, interviews were conducted for students across multiple departments including the School of Commerce, Management Studies, CSA, and the School of Applied Sciences. 
 
-You'll learn about different types of machine learning approaches, work with real datasets, and build your first ML models using Python and popular libraries like scikit-learn and pandas.
+A total of four students were selected to represent each department in our AIverse community activities. These interviews were aimed at ensuring inclusive representation and encouraging participation from diverse academic backgrounds.
 
-The workshop includes interactive coding sessions, group discussions, and a mini-project that you can add to your portfolio. All participants will receive a certificate of completion and access to exclusive learning resources.`,
-      type: "Workshop",
-      date: "2025-01-25",
+This initiative demonstrates our commitment to making AI accessible to students from all disciplines, recognizing that diverse perspectives are crucial for innovative AI solutions.`,
+      type: "Seminar",
+      date: "2024-09-09",
       time: "10:00",
-      venue: "Tech Auditorium, Main Campus",
-      organizer: "AI Club",
-      banner: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=800&h=400&fit=crop",
-      registrationOpen: true,
-      maxParticipants: 100,
-      registeredCount: 67,
+      venue: "Various Departments",
+      organizer: "AIverse Team",
+      banner: "https://images.unsplash.com/photo-1560439514-4e9645039924?w=800&h=400&fit=crop",
+      registrationOpen: false,
+      maxParticipants: 50,
+      registeredCount: 50,
       price: 0,
       learningOutcomes: [
-        "Understand core ML concepts and algorithms",
-        "Hands-on experience with Python ML libraries",
-        "Build and evaluate your first ML model",
-        "Learn data preprocessing techniques",
-        "Network with fellow AI enthusiasts"
+        "Inclusive representation across departments",
+        "Building diverse AI community",
+        "Encouraging cross-disciplinary collaboration",
+        "Fostering AI awareness in non-technical fields"
       ],
-      prerequisites: ["Basic Python Knowledge", "Laptop Required", "Mathematics Fundamentals"],
-      agenda: [
-        {
-          time: "10:00 AM",
-          title: "Welcome & Introduction",
-          description: "Registration, networking, and overview of the workshop",
-          speaker: "Dr. Sarah Johnson"
-        },
-        {
-          time: "10:30 AM",
-          title: "ML Fundamentals",
-          description: "Core concepts, types of learning, and real-world applications",
-          speaker: "Dr. Sarah Johnson"
-        },
-        {
-          time: "12:00 PM",
-          title: "Hands-on Coding Session",
-          description: "Building your first ML model with Python",
-          speaker: "Teaching Assistants"
-        },
-        {
-          time: "02:00 PM",
-          title: "Project Work & Q&A",
-          description: "Work on mini-project and get expert guidance",
-          speaker: "All Speakers"
-        }
-      ],
-      speakers: [
-        {
-          name: "Dr. Sarah Johnson",
-          title: "Senior AI Researcher",
-          company: "Google DeepMind",
-          bio: "Leading expert in machine learning with 10+ years of experience in AI research and development."
-        }
-      ]
+      prerequisites: ["Open to all departments", "Interest in AI and Technology"]
     },
     {
       id: 2,
-      title: "AI Hackathon 2025",
-      description: "48-hour hackathon focused on solving real-world problems using artificial intelligence. Teams will compete for prizes worth ₹50,000.",
-      fullDescription: `Get ready for the most exciting AI Hackathon of 2025! This 48-hour intensive coding marathon brings together the brightest minds to solve real-world challenges using cutting-edge AI technologies.
+      title: "Workshop for School of ECE on AI Tools",
+      description: "Hands-on workshop introducing modern AI tools to 90 enthusiastic students from Electronics and Communication Engineering, focusing on practical applications in data analysis, automation, and software development.",
+      fullDescription: `Held on 11th September, this hands-on workshop saw participation from around 90 enthusiastic students from the School of Electronics and Communication Engineering. 
 
-Teams of 2-4 members will work on problem statements provided by industry partners, ranging from healthcare AI solutions to environmental sustainability projects. Mentors from top tech companies will guide participants throughout the event.
+The session focused on introducing modern AI tools and how they are applied across domains including data analysis, automation, and software development. Students learned to leverage cutting-edge AI platforms and integrate them into their engineering projects.
 
-The hackathon features workshops, networking sessions, and presentations by industry leaders. Winners will receive cash prizes, internship opportunities, and the chance to implement their solutions with our partner organizations.`,
-      type: "Hackathon",
-      date: "2025-02-15",
-      time: "09:00",
-      venue: "Innovation Hub, Tech Park",
-      organizer: "TechFest Committee",
-      banner: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&h=400&fit=crop",
-      registrationOpen: true,
-      maxParticipants: 200,
-      registeredCount: 156,
-      price: 500,
+The workshop covered practical demonstrations of AI tools relevant to ECE students, including signal processing applications, embedded AI, and IoT integration with machine learning models.`,
+      type: "Workshop",
+      date: "2024-09-11",
+      time: "14:00",
+      venue: "School of ECE",
+      organizer: "AIverse & ECE Department",
+      banner: "/images/events/ece-workshop.jpeg",
+      registrationOpen: false,
+      maxParticipants: 100,
+      registeredCount: 90,
+      price: 0,
       learningOutcomes: [
-        "Develop AI solutions for real-world problems",
-        "Collaborate with talented developers",
-        "Learn from industry mentors",
-        "Present to potential employers",
-        "Win exciting prizes and recognition"
+        "Introduction to modern AI tools",
+        "Practical applications in ECE domain",
+        "Data analysis and automation techniques",
+        "Hands-on experience with AI platforms",
+        "Integration of AI in engineering projects"
       ],
-      prerequisites: ["Programming Experience", "Team Formation", "Laptop & Charger", "Problem-solving Skills"]
+      prerequisites: ["ECE students", "Basic programming knowledge helpful"]
     },
     {
       id: 3,
-      title: "Deep Learning Seminar",
-      description: "Advanced seminar on deep learning architectures, covering CNNs, RNNs, and Transformers. Suitable for intermediate to advanced learners.",
-      fullDescription: `Dive deep into the world of neural networks with this comprehensive seminar on Deep Learning architectures. This advanced session is designed for participants with prior ML experience who want to explore the cutting-edge of AI technology.
+      title: "Workshop for School of CSE on AI Tools",
+      description: "Comprehensive session for 80 Computer Science students covering practical demonstrations of trending AI utilities including Google Colab, ChatGPT, HuggingFace, and GitHub Copilot.",
+      fullDescription: `Conducted on 12th September, this session engaged around 80 students from the School of Computer Science. 
 
-The seminar covers the evolution of neural networks, from basic perceptrons to modern transformer architectures. You'll understand the mathematical foundations, practical implementations, and real-world applications of various deep learning models.
+The event covered practical demonstrations of trending AI utilities, APIs, and platforms such as Google Colab, ChatGPT, HuggingFace, and GitHub Copilot, empowering students with hands-on AI integration techniques.
 
-Interactive demonstrations will show how these architectures work in practice, with examples from computer vision, natural language processing, and generative AI. The session includes hands-on coding exercises and case studies from industry applications.`,
-      type: "Seminar",
-      date: "2025-02-08",
+Students learned how to leverage these powerful tools for their development projects, understand API integration, and explore the latest advancements in generative AI and code assistance technologies.`,
+      type: "Workshop",
+      date: "2024-09-12",
       time: "14:00",
-      venue: "Conference Hall A, Engineering Block",
-      organizer: "Computer Science Department",
-      banner: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=400&fit=crop",
-      registrationOpen: true,
-      maxParticipants: 80,
-      registeredCount: 45,
-      price: 200,
+      venue: "School of CSE",
+      organizer: "AIverse & CSE Department",
+      banner: "/images/events/cse-workshop.jpeg",
+      registrationOpen: false,
+      maxParticipants: 100,
+      registeredCount: 80,
+      price: 0,
       learningOutcomes: [
-        "Master deep learning architectures",
-        "Understand CNN, RNN, and Transformer models",
-        "Learn optimization techniques",
-        "Explore real-world applications",
-        "Get insights from research experts"
+        "Master Google Colab for ML projects",
+        "Leverage ChatGPT and LLMs effectively",
+        "Explore HuggingFace model hub",
+        "Boost productivity with GitHub Copilot",
+        "API integration techniques",
+        "Practical AI tool implementation"
       ],
-      prerequisites: ["Machine Learning Basics", "Python Programming", "Linear Algebra", "Statistics Knowledge"]
+      prerequisites: ["CSE students", "Python programming", "Laptop required"]
     },
+    // UPCOMING EVENTS
     {
       id: 4,
-      title: "Neural Networks Competition",
-      description: "Competitive programming event focused on neural network optimization and architecture design. Cash prizes for top performers.",
-      fullDescription: `Test your neural network expertise in this exciting competition that challenges participants to design, optimize, and implement efficient neural network architectures for various tasks.
+      title: "GitHub Workshop - Version Control Mastery",
+      description: "Comprehensive workshop on Git and GitHub, covering version control, collaboration, open source contributions, and professional development workflows.",
+      fullDescription: `Join us for an intensive GitHub workshop designed to take your development skills to the next level. Learn industry-standard version control practices, collaboration workflows, and open source contribution strategies.
 
-The competition consists of multiple rounds, starting with theoretical questions about neural network fundamentals, followed by practical coding challenges where you'll implement networks from scratch, and culminating in an optimization challenge where efficiency and accuracy matter.
+This hands-on session will cover Git fundamentals, branching strategies, pull requests, code reviews, GitHub Actions for CI/CD, and best practices for managing large projects. Perfect for students looking to build their professional development portfolio and contribute to open source projects.
 
-Participants will work with different datasets and problem types, from image classification to time series prediction. The competition emphasizes both theoretical understanding and practical implementation skills, making it perfect for students who want to showcase their deep learning expertise.`,
-      type: "Competition",
-      date: "2025-03-01",
-      time: "10:00",
-      venue: "Computer Lab 1 & 2, IT Building",
-      organizer: "Coding Club",
-      banner: "https://images.unsplash.com/photo-1518186285589-2f7649de83e0?w=800&h=400&fit=crop",
+The workshop includes live coding sessions, real-world scenarios, and collaborative exercises where you'll work with fellow developers to simulate industry workflows.`,
+      type: "Workshop",
+      date: "2024-11-15",
+      time: "14:00",
+      venue: "Computer Lab, Main Campus",
+      organizer: "AIverse Team",
+      banner: "/images/events/github-workshop.jpeg",
       registrationOpen: true,
-      maxParticipants: 60,
-      registeredCount: 38,
-      price: 100,
+      maxParticipants: 100,
+      registeredCount: 0,
+      price: 0,
       learningOutcomes: [
-        "Test neural network implementation skills",
-        "Learn optimization techniques",
-        "Compete with top programmers",
-        "Win cash prizes and recognition",
-        "Build competitive programming portfolio"
+        "Master Git commands and workflows",
+        "Learn GitHub collaboration features",
+        "Understand branching and merging strategies",
+        "Contribute to open source projects",
+        "Set up CI/CD with GitHub Actions",
+        "Build professional developer portfolio"
       ],
-      prerequisites: ["Deep Learning Knowledge", "Python/PyTorch", "Competitive Programming", "Algorithm Design"]
+      prerequisites: ["Basic programming knowledge", "Laptop with Git installed", "GitHub account"]
     },
     {
       id: 5,
-      title: "AI Ethics Webinar",
-      description: "Online discussion about ethical considerations in AI development, bias in algorithms, and responsible AI practices.",
-      fullDescription: `Join leading experts in a crucial discussion about the ethical implications of artificial intelligence in our society. This webinar addresses the growing need for responsible AI development and deployment practices.
+      title: "AI Utsav 2024 - The Grand Launch",
+      description: "The biggest AI event of the year! Join us for AI Utsav, a spectacular celebration of artificial intelligence featuring workshops, competitions, keynote speakers, project showcases, and exciting prizes.",
+      fullDescription: `Get ready for AI Utsav 2024 - the most anticipated AI event of the year! This grand launch event marks the official beginning of an exciting journey into the world of artificial intelligence at our institution.
 
-The session covers key topics including algorithmic bias, fairness in machine learning, privacy concerns, and the societal impact of AI systems. Expert panelists from academia, industry, and policy-making will share insights and engage in meaningful discussions about the future of ethical AI.
+AI Utsav is a comprehensive multi-day celebration featuring expert keynote sessions, hands-on workshops, coding competitions, hackathons, project showcases, industry networking sessions, and panel discussions with AI leaders from top companies and research institutions.
 
-Participants will learn about current frameworks for ethical AI development, case studies of AI bias in real-world applications, and practical strategies for building more inclusive and fair AI systems. The webinar includes interactive Q&A sessions and breakout discussions.`,
-      type: "Webinar",
-      date: "2025-01-30",
-      time: "16:00",
-      venue: "Online (Zoom)",
-      organizer: "Ethics in Tech Society",
-      banner: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop",
+Experience cutting-edge AI demonstrations, participate in exciting challenges with prizes worth lakhs, network with industry professionals, and be part of the AI revolution. Whether you're a beginner or an advanced practitioner, AI Utsav has something incredible for everyone.
+
+This flagship event will feature renowned speakers from Google, Microsoft, NVIDIA, and leading AI startups, along with exclusive internship and placement opportunities for outstanding participants.`,
+      type: "Competition",
+      date: "2024-11-07",
+      time: "09:00",
+      venue: "Main Auditorium & Campus-wide",
+      organizer: "AIverse Team",
+      banner: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=400&fit=crop",
       registrationOpen: true,
       maxParticipants: 500,
-      registeredCount: 234,
+      registeredCount: 0,
       price: 0,
       learningOutcomes: [
-        "Understand AI ethics frameworks",
-        "Learn about algorithmic bias",
-        "Explore responsible AI practices",
-        "Engage with industry experts",
-        "Develop ethical AI mindset"
+        "Explore latest AI trends and technologies",
+        "Learn from industry experts and researchers",
+        "Participate in exciting competitions",
+        "Network with AI professionals",
+        "Showcase your AI projects",
+        "Win amazing prizes and opportunities",
+        "Get industry exposure and placement opportunities"
       ],
-      prerequisites: ["Basic AI Knowledge", "Stable Internet Connection", "Interest in Ethics"]
-    },
-    {
-      id: 6,
-      title: "Computer Vision Workshop",
-      description: "Hands-on workshop on computer vision techniques using OpenCV and deep learning. Build image recognition applications.",
-      fullDescription: `Explore the fascinating world of computer vision in this hands-on workshop that takes you from basic image processing to advanced deep learning applications. Perfect for students interested in visual AI and image recognition technologies.
-
-The workshop covers fundamental computer vision concepts, image preprocessing techniques, feature extraction, and modern deep learning approaches for visual tasks. You'll work with popular libraries like OpenCV, TensorFlow, and PyTorch to build practical applications.
-
-Participants will create several projects including object detection systems, facial recognition applications, and image classification models. The workshop emphasizes practical skills with real-world datasets and industry-standard tools and techniques.`,
-      type: "Workshop",
-      date: "2025-02-20",
-      time: "09:30",
-      venue: "AI Lab, Research Center",
-      organizer: "Vision Research Group",
-      banner: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=400&fit=crop",
-      registrationOpen: false,
-      maxParticipants: 40,
-      registeredCount: 40,
-      price: 300,
-      learningOutcomes: [
-        "Master computer vision fundamentals",
-        "Build image recognition applications",
-        "Learn OpenCV and deep learning",
-        "Work with real-world datasets",
-        "Create portfolio projects"
-      ],
-      prerequisites: ["Python Programming", "Basic ML Knowledge", "Image Processing Basics", "Laptop with GPU"]
+      prerequisites: ["Open to all students", "Passion for AI and Innovation", "Register early to secure your spot!"]
     }
   ];
 
