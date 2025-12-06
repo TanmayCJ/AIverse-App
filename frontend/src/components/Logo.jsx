@@ -39,9 +39,9 @@ const Logo = ({
           height: config.logoSize,
           display: 'block',
           userSelect: 'none',
-          filter: 'none',
+          filter: 'grayscale(100%) brightness(1.2) contrast(1.3)',
           mixBlendMode: 'screen',
-          opacity: 0.9,
+          opacity: 0.95,
           background: 'transparent',
         }}
       />

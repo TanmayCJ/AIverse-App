@@ -56,7 +56,7 @@ const EventCard = ({ event, onViewDetails, index }) => {
       onClick={() => onViewDetails(event)}
     >
       {/* Event Banner */}
-      <div className="relative overflow-hidden rounded-t-xl h-48">
+      <div className="relative overflow-hidden rounded-t-xl h-56">
         <Image
           src={event?.banner}
           alt={event?.title}
@@ -101,19 +101,14 @@ const EventCard = ({ event, onViewDetails, index }) => {
         </div>
       </div>
       {/* Event Content */}
-      <div className="p-6">
+      <div className="p-5">
         {/* Title */}
-        <h3 className="text-xl font-bold text-text-primary mb-2 group-hover:text-primary transition-colors line-clamp-2">
+        <h3 className="text-lg font-bold text-text-primary mb-4 group-hover:text-primary transition-colors line-clamp-2">
           {event?.title}
         </h3>
 
-        {/* Description */}
-        <p className="text-text-secondary text-sm mb-4 line-clamp-3">
-          {event?.description}
-        </p>
-
-        {/* Event Details */}
-        <div className="space-y-3 mb-6">
+        {/* Event Details - Only Date & Time */}
+        <div className="space-y-2.5 mb-4">
           {/* Date & Time */}
           <div className="flex items-center space-x-3 text-sm">
             <Icon name="Calendar" size={16} className="text-primary" />
@@ -133,33 +128,25 @@ const EventCard = ({ event, onViewDetails, index }) => {
               {event?.venue}
             </span>
           </div>
-
-          {/* Organizer */}
-          <div className="flex items-center space-x-3 text-sm">
-            <Icon name="User" size={16} className="text-text-secondary" />
-            <span className="text-text-secondary">
-              Organized by {event?.organizer}
-            </span>
-          </div>
         </div>
 
         {/* Registration Info */}
-        <div className="flex items-center justify-between mb-4">
+        <div className="flex items-center justify-between mb-3">
           <div className="flex items-center space-x-2">
             <Icon name="Users" size={16} className="text-text-secondary" />
             <span className="text-sm text-text-secondary">
               {event?.registeredCount}/{event?.maxParticipants} registered
             </span>
           </div>
-          <div className="text-sm font-medium text-primary">
+          <div className="text-sm font-bold text-primary">
             {event?.price === 0 ? 'Free' : `₹${event?.price}`}
           </div>
         </div>
 
         {/* Progress Bar */}
-        <div className="w-full bg-surface rounded-full h-2 mb-4">
+        <div className="w-full bg-surface rounded-full h-1.5 mb-4">
           <div 
-            className="bg-gradient-to-r from-primary to-accent h-2 rounded-full transition-all duration-300"
+            className="bg-gradient-to-r from-primary to-accent h-1.5 rounded-full transition-all duration-300"
             style={{ 
               width: `${Math.min((event?.registeredCount / event?.maxParticipants) * 100, 100)}%` 
             }}
