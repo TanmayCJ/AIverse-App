@@ -17,9 +17,9 @@ const ProgressStats = ({ stats, weeklyProgress }) => {
       title: 'Completed',
       value: stats?.completed,
       icon: 'CheckCircle',
-      color: 'text-success',
-      bgColor: 'bg-success/10',
-      borderColor: 'border-success/20'
+      color: 'text-white',
+      bgColor: 'bg-white/10',
+      borderColor: 'border-white/20'
     },
     {
       title: 'In Progress',
@@ -97,7 +97,7 @@ const ProgressStats = ({ stats, weeklyProgress }) => {
                 <div
                   className={`w-8 h-8 mx-auto rounded-lg flex items-center justify-center text-xs font-medium transition-all duration-200 ${
                     day?.completed > 0
-                      ? 'bg-success/20 text-success border border-success/30' :'bg-surface/30 text-text-muted border border-border'
+                      ? 'bg-white/20 text-white border border-white/30' :'bg-surface/30 text-text-muted border border-border'
                   }`}
                 >
                   {day?.completed}

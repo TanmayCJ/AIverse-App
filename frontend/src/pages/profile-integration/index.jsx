@@ -187,7 +187,7 @@ const ProfileIntegration = () => {
             <h2 className="text-2xl font-bold text-text-primary mb-6 text-center">Your GitHub Stats</h2>
             <div className="grid md:grid-cols-2 gap-8">
               <div className="text-center">
-                <Icon name="GitBranch" size={40} className="mx-auto text-purple-500 mb-3" />
+                <Icon name="GitBranch" size={40} className="mx-auto text-white mb-3" />
                 <p className="text-text-secondary mb-2">Total Repositories</p>
                 <p className="text-3xl font-bold text-text-primary">{githubRepos.length}</p>
               </div>
@@ -205,7 +205,7 @@ const ProfileIntegration = () => {
                 {githubRepos.slice(0, 10).map((repo, idx) => (
                   <div key={idx} className="flex items-center justify-between p-3 bg-surface/30 rounded-lg border border-border">
                     <div className="flex items-center space-x-3">
-                      <Icon name="GitBranch" size={16} className="text-purple-500" />
+                      <Icon name="GitBranch" size={16} className="text-gray-300" />
                       <span className="text-text-primary font-medium">{repo.repo_name}</span>
                     </div>
                     <span className="text-success text-sm">+10 pts</span>

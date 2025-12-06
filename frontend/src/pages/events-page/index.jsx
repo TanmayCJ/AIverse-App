@@ -331,19 +331,19 @@ This flagship event will feature renowned speakers from Google, Microsoft, NVIDI
               {/* Stats */}
               <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto mb-8">
                 <div className="glass-card p-4">
-                  <div className="text-2xl font-bold text-primary">{stats?.totalEvents}</div>
+                  <div className="text-3xl font-bold text-white">{stats?.totalEvents}</div>
                   <div className="text-sm text-text-secondary">Total Events</div>
                 </div>
                 <div className="glass-card p-4">
-                  <div className="text-2xl font-bold text-accent">{stats?.openRegistrations}</div>
+                  <div className="text-3xl font-bold text-white">{stats?.openRegistrations}</div>
                   <div className="text-sm text-text-secondary">Open Registration</div>
                 </div>
                 <div className="glass-card p-4">
-                  <div className="text-2xl font-bold text-secondary">{stats?.totalRegistrations}</div>
+                  <div className="text-3xl font-bold text-white">{stats?.totalRegistrations}</div>
                   <div className="text-sm text-text-secondary">Total Registrations</div>
                 </div>
                 <div className="glass-card p-4">
-                  <div className="text-2xl font-bold text-success">{stats?.upcomingEvents}</div>
+                  <div className="text-3xl font-bold text-white">{stats?.upcomingEvents}</div>
                   <div className="text-sm text-text-secondary">Upcoming Events</div>
                 </div>
               </div>
@@ -381,7 +381,7 @@ This flagship event will feature renowned speakers from Google, Microsoft, NVIDI
 
             {/* Events Grid */}
             {loading ? (
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
                 {Array.from({ length: 6 })?.map((_, index) => (
                   <div key={index} className="glass-card animate-pulse">
                     <div className="h-48 bg-surface/30 rounded-t-xl" />
@@ -398,7 +398,7 @@ This flagship event will feature renowned speakers from Google, Microsoft, NVIDI
                 ))}
               </div>
             ) : filteredEvents?.length > 0 ? (
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
                 {filteredEvents?.map((event, index) => (
                   <EventCard
                     key={event?.id}

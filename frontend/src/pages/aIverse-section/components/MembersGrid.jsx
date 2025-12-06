@@ -15,9 +15,9 @@ const MembersGrid = () => {
       bio: "Leading the AIverse community with vision and dedication to foster AI innovation and collaborative learning.",
       expertise: ["Leadership", "AI Strategy", "Community Building"],
       achievements: ["Community Leader", "Event Organizer", "Innovation Driver"],
-      gradient: "from-purple-500 to-purple-700",
-      iconColor: "text-purple-500",
-      borderColor: "border-purple-500/30"
+      gradient: "from-gray-700 to-gray-900",
+      iconColor: "text-gray-300",
+      borderColor: "border-gray-500/30"
     },
     {
       id: 2,
@@ -28,9 +28,9 @@ const MembersGrid = () => {
       bio: "Guiding and mentoring the AIverse community with academic expertise and fostering innovation in AI education.",
       expertise: ["Academic Leadership", "AI Research", "Student Mentorship"],
       achievements: ["Faculty Excellence", "Research Guidance", "Academic Innovation"],
-      gradient: "from-pink-500 to-pink-700",
-      iconColor: "text-pink-500",
-      borderColor: "border-pink-500/30"
+      gradient: "from-gray-600 to-gray-800",
+      iconColor: "text-gray-200",
+      borderColor: "border-gray-400/30"
     },
     {
       id: 3,
@@ -41,9 +41,9 @@ const MembersGrid = () => {
       bio: "Managing day-to-day operations and coordinating between different teams to achieve club objectives.",
       expertise: ["Project Management", "Resource Allocation", "Strategic Planning"],
       achievements: ["Efficiency Expert", "Resource Optimizer", "Team Facilitator"],
-      gradient: "from-blue-500 to-blue-700",
-      iconColor: "text-blue-500",
-      borderColor: "border-blue-500/30"
+      gradient: "from-gray-500 to-gray-700",
+      iconColor: "text-gray-100",
+      borderColor: "border-gray-300/30"
     },
     {
       id: 4,
@@ -54,9 +54,9 @@ const MembersGrid = () => {
       bio: "Driving technical excellence and innovation in all AIverse projects and technical initiatives.",
       expertise: ["AI/ML", "Software Development", "Technical Leadership"],
       achievements: ["Technical Innovation", "Platform Development", "Code Excellence"],
-      gradient: "from-cyan-500 to-cyan-700",
-      iconColor: "text-cyan-500",
-      borderColor: "border-cyan-500/30"
+      gradient: "from-gray-600 to-gray-800",
+      iconColor: "text-white",
+      borderColor: "border-gray-400/30"
     },
     {
       id: 5,
@@ -67,9 +67,9 @@ const MembersGrid = () => {
       bio: "Crafting beautiful and intuitive designs that enhance user experience across all AIverse platforms.",
       expertise: ["UI/UX Design", "Branding", "Visual Communication"],
       achievements: ["Design Excellence", "Brand Identity", "User Experience"],
-      gradient: "from-orange-500 to-orange-700",
-      iconColor: "text-orange-500",
-      borderColor: "border-orange-500/30"
+      gradient: "from-gray-500 to-gray-700",
+      iconColor: "text-gray-200",
+      borderColor: "border-gray-300/30"
     },
     {
       id: 6,
@@ -80,9 +80,9 @@ const MembersGrid = () => {
       bio: "Orchestrating engaging events and workshops that bring the AIverse community together.",
       expertise: ["Event Planning", "Logistics", "Community Engagement"],
       achievements: ["Event Excellence", "Workshop Coordination", "Community Engagement"],
-      gradient: "from-green-500 to-green-700",
-      iconColor: "text-green-500",
-      borderColor: "border-green-500/30"
+      gradient: "from-gray-600 to-gray-800",
+      iconColor: "text-gray-100",
+      borderColor: "border-gray-400/30"
     }
   ];
 

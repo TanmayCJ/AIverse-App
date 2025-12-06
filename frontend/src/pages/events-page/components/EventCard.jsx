@@ -38,11 +38,11 @@ const EventCard = ({ event, onViewDetails, index }) => {
 
   const getEventTypeColor = (type) => {
     switch (type?.toLowerCase()) {
-      case 'workshop': return 'text-accent';
-      case 'hackathon': return 'text-primary';
-      case 'seminar': return 'text-secondary';
-      case 'competition': return 'text-warning-400';
-      case 'webinar': return 'text-success';
+      case 'workshop': return 'text-gray-300';
+      case 'hackathon': return 'text-white';
+      case 'seminar': return 'text-gray-200';
+      case 'competition': return 'text-gray-100';
+      case 'webinar': return 'text-gray-300';
       default: return 'text-text-secondary';
     }
   };
@@ -56,7 +56,7 @@ const EventCard = ({ event, onViewDetails, index }) => {
       onClick={() => onViewDetails(event)}
     >
       {/* Event Banner */}
-      <div className="relative overflow-hidden rounded-t-xl h-56">
+      <div className="relative overflow-hidden rounded-t-xl h-44 sm:h-52 lg:h-56">
         <Image
           src={event?.banner}
           alt={event?.title}
@@ -82,7 +82,7 @@ const EventCard = ({ event, onViewDetails, index }) => {
         <div className="absolute top-4 right-4">
           <div className={`px-3 py-1 rounded-full text-xs font-medium ${
             event?.registrationOpen 
-              ? 'bg-success/20 text-success border border-success/30' :'bg-error/20 text-error border border-error/30'
+              ? 'bg-white/20 text-white border border-white/30' :'bg-gray-600/20 text-gray-400 border border-gray-600/30'
           }`}>
             {event?.registrationOpen ? 'Open' : 'Closed'}
           </div>
@@ -91,62 +91,62 @@ const EventCard = ({ event, onViewDetails, index }) => {
         {/* Event Date Overlay */}
         <div className="absolute bottom-4 left-4">
           <div className="bg-background/90 backdrop-blur-sm px-3 py-2 rounded-lg">
-            <div className="text-primary text-lg font-bold">
+            <div className="text-white text-lg font-bold">
               {new Date(event.date)?.getDate()}
             </div>
-            <div className="text-text-secondary text-xs -mt-1">
+            <div className="text-gray-300 text-xs -mt-1">
               {new Date(event.date)?.toLocaleDateString('en-US', { month: 'short' })}
             </div>
           </div>
         </div>
       </div>
       {/* Event Content */}
-      <div className="p-5">
+      <div className="p-4 sm:p-5">
         {/* Title */}
-        <h3 className="text-lg font-bold text-text-primary mb-4 group-hover:text-primary transition-colors line-clamp-2">
+        <h3 className="text-base sm:text-lg font-bold text-text-primary mb-3 sm:mb-4 group-hover:text-primary transition-colors line-clamp-2">
           {event?.title}
         </h3>
 
         {/* Event Details - Only Date & Time */}
-        <div className="space-y-2.5 mb-4">
+        <div className="space-y-2 sm:space-y-2.5 mb-3 sm:mb-4">
           {/* Date & Time */}
-          <div className="flex items-center space-x-3 text-sm">
-            <Icon name="Calendar" size={16} className="text-primary" />
-            <span className="text-text-primary font-medium">
+          <div className="flex items-center space-x-2 sm:space-x-3 text-xs sm:text-sm">
+            <Icon name="Calendar" size={14} className="text-gray-300 flex-shrink-0" />
+            <span className="text-text-primary font-medium truncate">
               {formatDate(event?.date)}
             </span>
-            <Icon name="Clock" size={16} className="text-accent" />
+            <Icon name="Clock" size={14} className="text-gray-300 flex-shrink-0" />
             <span className="text-text-primary">
               {formatTime(event?.time)}
             </span>
           </div>
 
           {/* Venue */}
-          <div className="flex items-center space-x-3 text-sm">
-            <Icon name="MapPin" size={16} className="text-secondary" />
-            <span className="text-text-primary">
+          <div className="flex items-center space-x-2 sm:space-x-3 text-xs sm:text-sm">
+            <Icon name="MapPin" size={14} className="text-gray-300 flex-shrink-0" />
+            <span className="text-text-primary truncate">
               {event?.venue}
             </span>
           </div>
         </div>
 
         {/* Registration Info */}
-        <div className="flex items-center justify-between mb-3">
-          <div className="flex items-center space-x-2">
-            <Icon name="Users" size={16} className="text-text-secondary" />
-            <span className="text-sm text-text-secondary">
-              {event?.registeredCount}/{event?.maxParticipants} registered
+        <div className="flex items-center justify-between mb-2 sm:mb-3">
+          <div className="flex items-center space-x-1.5 sm:space-x-2">
+            <Icon name="Users" size={14} className="text-text-secondary flex-shrink-0" />
+            <span className="text-xs sm:text-sm text-text-secondary">
+              {event?.registeredCount}/{event?.maxParticipants}
             </span>
           </div>
-          <div className="text-sm font-bold text-primary">
+          <div className="text-xs sm:text-sm font-bold text-white">
             {event?.price === 0 ? 'Free' : `₹${event?.price}`}
           </div>
         </div>
 
         {/* Progress Bar */}
-        <div className="w-full bg-surface rounded-full h-1.5 mb-4">
+        <div className="w-full bg-surface rounded-full h-1.5 mb-3 sm:mb-4">
           <div 
-            className="bg-gradient-to-r from-primary to-accent h-1.5 rounded-full transition-all duration-300"
+            className="bg-gradient-to-r from-gray-600 to-gray-400 h-1.5 rounded-full transition-all duration-300"
             style={{ 
               width: `${Math.min((event?.registeredCount / event?.maxParticipants) * 100, 100)}%` 
             }}
@@ -159,7 +159,7 @@ const EventCard = ({ event, onViewDetails, index }) => {
           fullWidth
           iconName="ArrowRight"
           iconPosition="right"
-          className="group-hover:bg-primary-600 transition-colors"
+          className="group-hover:bg-primary-600 transition-colors text-sm"
           disabled={!event?.registrationOpen}
         >
           {event?.registrationOpen ? 'View Details' : 'Registration Closed'}

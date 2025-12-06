@@ -449,13 +449,15 @@ const StudentLeaderboard = () => {
                 <div className="flex flex-wrap items-center gap-4">
                   {topContributors?.map((c, idx) => (
                     <div key={c.id || c.username} className="flex items-center space-x-3 bg-surface/50 rounded-lg p-3">
-                      <img src={c.avatar} alt={c.name || c.username} className="w-12 h-12 rounded-full object-cover" />
+                      <div className="w-12 h-12 rounded-full bg-gray-700 flex items-center justify-center">
+                        <span className="text-white font-semibold text-lg">{(c.name || c.username).charAt(0).toUpperCase()}</span>
+                      </div>
                       <div>
                         <div className="font-medium text-text-primary">{c.name || c.username}</div>
                         <div className="text-sm text-text-secondary">{c.totalPoints || c.total_points} pts</div>
                       </div>
                       {idx === 0 && (
-                        <div className="ml-4 text-sm font-semibold text-warning">Top</div>
+                        <div className="ml-4 text-sm font-semibold text-gray-300">Top</div>
                       )}
                     </div>
                   ))}

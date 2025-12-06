@@ -68,38 +68,38 @@ const AlverseSection = () => {
 
           <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center">
-              <div className="inline-flex items-center space-x-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-6">
-                <Icon name="Users" size={16} />
+              <div className="inline-flex items-center space-x-2 bg-white/10 text-white px-3 py-1.5 rounded-full text-xs sm:text-sm font-medium mb-4 sm:mb-6">
+                <Icon name="Users" size={14} className="sm:w-4 sm:h-4" />
                 <span>Community Hub</span>
               </div>
               
-              <h1 className="text-4xl md:text-6xl font-bold text-gradient-primary mb-6">
-                Welcome to
-                <span className="block text-gradient-accent">Community Hub</span>
+              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold mb-4 sm:mb-6">
+                <span className="block text-text-primary">Welcome to</span>
+                <span className="block text-text-secondary mt-1 sm:mt-2">Community Hub</span>
               </h1>
               
-              <p className="text-xl text-text-secondary max-w-3xl mx-auto mb-8 leading-relaxed">
+              <p className="text-sm sm:text-base md:text-lg lg:text-xl text-text-secondary max-w-3xl mx-auto mb-6 sm:mb-8 leading-relaxed px-2">
                 Meet our passionate leadership team driving innovation and building a thriving AI community. 
                 Connect with the minds behind AIverse's success and discover opportunities to get involved.
               </p>
 
               {/* Quick Stats */}
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto mb-12">
-                <div className="glass rounded-xl p-4 text-center">
-                  <div className="text-2xl font-bold text-primary mb-1">6</div>
-                  <div className="text-text-secondary text-sm">Team Leaders</div>
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-6 max-w-4xl mx-auto mb-8 sm:mb-12">
+                <div className="glass rounded-lg sm:rounded-xl p-3 sm:p-4 text-center">
+                  <div className="text-xl sm:text-2xl md:text-3xl font-bold text-text-primary mb-1">6</div>
+                  <div className="text-text-secondary text-xs sm:text-sm">Team Leaders</div>
                 </div>
-                <div className="glass rounded-xl p-4 text-center">
-                  <div className="text-2xl font-bold text-secondary mb-1">1,117</div>
-                  <div className="text-text-secondary text-sm">Active Members</div>
+                <div className="glass rounded-lg sm:rounded-xl p-3 sm:p-4 text-center">
+                  <div className="text-xl sm:text-2xl md:text-3xl font-bold text-text-primary mb-1">1,117</div>
+                  <div className="text-text-secondary text-xs sm:text-sm">Active Members</div>
                 </div>
-                <div className="glass rounded-xl p-4 text-center">
-                  <div className="text-2xl font-bold text-accent mb-1">5</div>
-                  <div className="text-text-secondary text-sm">Events Hosted</div>
+                <div className="glass rounded-lg sm:rounded-xl p-3 sm:p-4 text-center">
+                  <div className="text-xl sm:text-2xl md:text-3xl font-bold text-text-primary mb-1">5</div>
+                  <div className="text-text-secondary text-xs sm:text-sm">Events Hosted</div>
                 </div>
-                <div className="glass rounded-xl p-4 text-center">
-                  <div className="text-2xl font-bold text-success mb-1">25+</div>
-                  <div className="text-text-secondary text-sm">Expert Mentors</div>
+                <div className="glass rounded-lg sm:rounded-xl p-3 sm:p-4 text-center">
+                  <div className="text-xl sm:text-2xl md:text-3xl font-bold text-text-primary mb-1">25+</div>
+                  <div className="text-text-secondary text-xs sm:text-sm">Expert Mentors</div>
                 </div>
               </div>
             </div>
@@ -116,27 +116,27 @@ const AlverseSection = () => {
         </section>
 
         {/* Community CTA Section */}
-        <section className="relative py-20 overflow-hidden">
+        <section className="relative py-12 sm:py-16 md:py-20 overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-r from-primary/10 via-secondary/10 to-accent/10"></div>
           
           <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <div className="glass rounded-2xl p-12">
-              <Icon name="Heart" size={48} className="text-primary mx-auto mb-6" />
-              <h2 className="text-3xl font-bold text-gradient-primary mb-6">
+            <div className="glass rounded-xl sm:rounded-2xl p-6 sm:p-8 md:p-12">
+              <Icon name="Heart" size={32} className="sm:w-10 sm:h-10 md:w-12 md:h-12 text-text-primary mx-auto mb-4 sm:mb-6" />
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-text-primary mb-4 sm:mb-6">
                 Join Our Growing Community
               </h2>
-              <p className="text-xl text-text-secondary max-w-2xl mx-auto mb-8">
+              <p className="text-sm sm:text-base md:text-lg lg:text-xl text-text-secondary max-w-2xl mx-auto mb-6 sm:mb-8 px-2">
                 Be part of a vibrant ecosystem where innovation meets collaboration. 
                 Connect with like-minded individuals, learn from industry experts, and shape the future of AI.
               </p>
               
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button className="flex items-center justify-center space-x-2 px-8 py-4 bg-primary text-white rounded-xl hover:bg-primary-600 transition-all duration-300 btn-hover-lift">
-                  <Icon name="UserPlus" size={20} />
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center max-w-md sm:max-w-none mx-auto">
+                <button className="flex items-center justify-center space-x-2 px-6 sm:px-8 py-3 sm:py-4 bg-text-primary text-background rounded-lg sm:rounded-xl hover:opacity-80 transition-all duration-300 btn-hover-lift text-sm sm:text-base">
+                  <Icon name="UserPlus" size={18} className="sm:w-5 sm:h-5" />
                   <span className="font-semibold">Become a Member</span>
                 </button>
-                <button className="flex items-center justify-center space-x-2 px-8 py-4 glass text-text-primary rounded-xl hover:bg-surface/50 transition-all duration-300 btn-hover-lift">
-                  <Icon name="MessageCircle" size={20} />
+                <button className="flex items-center justify-center space-x-2 px-6 sm:px-8 py-3 sm:py-4 glass text-text-primary rounded-lg sm:rounded-xl hover:bg-surface/50 transition-all duration-300 btn-hover-lift text-sm sm:text-base">
+                  <Icon name="MessageCircle" size={18} className="sm:w-5 sm:h-5" />
                   <span className="font-semibold">Get in Touch</span>
                 </button>
               </div>

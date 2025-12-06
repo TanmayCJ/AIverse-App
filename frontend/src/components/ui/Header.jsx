@@ -100,13 +100,14 @@ const Header = () => {
       isScrolled 
         ? 'glass backdrop-blur-xl border-b border-border' :'bg-transparent'
     }`}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 lg:h-20">
+      <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-14 sm:h-16 lg:h-20">
           {/* Logo */}
           <Logo 
-            size="medium" 
+            size="small" 
             showText={false}
             onClick={() => navigate('/landing-page')}
+            className="sm:scale-110 md:scale-125"
           />
 
           {/* Desktop Navigation */}
@@ -151,21 +152,21 @@ const Header = () => {
           </div>
 
           {/* Right Side Actions */}
-          <div className="flex items-center space-x-3">
+          <div className="flex items-center space-x-1 sm:space-x-2 md:space-x-3">
             {/* Mobile Search */}
-            <button className="md:hidden p-2 text-text-secondary hover:text-text-primary transition-colors">
-              <Icon name="Search" size={20} />
+            <button className="md:hidden p-1.5 sm:p-2 text-text-secondary hover:text-text-primary transition-colors">
+              <Icon name="Search" size={18} className="sm:w-5 sm:h-5" />
             </button>
 
             {/* Notifications */}
             <div className="relative notification-dropdown">
               <button
                 onClick={() => setShowNotifications(!showNotifications)}
-                className="relative p-2 text-text-secondary hover:text-text-primary transition-colors"
+                className="relative p-1.5 sm:p-2 text-text-secondary hover:text-text-primary transition-colors"
               >
-                <Icon name="Bell" size={20} />
+                <Icon name="Bell" size={18} className="sm:w-5 sm:h-5" />
                 {unreadCount > 0 && (
-                  <span className="absolute -top-1 -right-1 w-5 h-5 bg-error text-white text-xs rounded-full flex items-center justify-center animate-pulse-glow">
+                  <span className="absolute -top-0.5 -right-0.5 sm:-top-1 sm:-right-1 w-4 h-4 sm:w-5 sm:h-5 bg-error text-white text-[10px] sm:text-xs rounded-full flex items-center justify-center animate-pulse-glow">
                     {unreadCount}
                   </span>
                 )}
@@ -272,17 +273,17 @@ const Header = () => {
                 )}
               </div>
             ) : (
-              <div className="flex items-center space-x-2">
+              <div className="hidden sm:flex items-center space-x-2">
                 <div className="flex items-center space-x-2 text-text-secondary">
-                  <div className="w-8 h-8 bg-surface/50 border border-border rounded-full flex items-center justify-center">
-                    <Icon name="User" size={16} />
+                  <div className="w-7 h-7 sm:w-8 sm:h-8 bg-surface/50 border border-border rounded-full flex items-center justify-center">
+                    <Icon name="User" size={14} className="sm:w-4 sm:h-4" />
                   </div>
-                  <span className="text-sm hidden sm:inline">Guest</span>
+                  <span className="text-xs sm:text-sm hidden md:inline">Guest</span>
                 </div>
-                <Button variant="ghost" size="sm" onClick={() => navigate('/auth')}>
+                <Button variant="ghost" size="sm" onClick={() => navigate('/auth')} className="text-xs sm:text-sm px-2 sm:px-3">
                   Sign In
                 </Button>
-                <Button variant="default" size="sm" onClick={() => navigate('/auth')}>
+                <Button variant="default" size="sm" onClick={() => navigate('/auth')} className="text-xs sm:text-sm px-2 sm:px-3">
                   Sign Up
                 </Button>
               </div>
@@ -291,16 +292,16 @@ const Header = () => {
             {/* Mobile Menu Toggle */}
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="lg:hidden p-2 text-text-secondary hover:text-text-primary transition-colors"
+              className="lg:hidden p-1.5 sm:p-2 text-text-secondary hover:text-text-primary transition-colors"
             >
-              <Icon name={isMenuOpen ? "X" : "Menu"} size={20} />
+              <Icon name={isMenuOpen ? "X" : "Menu"} size={20} className="sm:w-5 sm:h-5" />
             </button>
           </div>
         </div>
 
         {/* Mobile Navigation Menu */}
         {isMenuOpen && (
-          <div className="lg:hidden absolute top-full left-0 right-0 glass border-t border-border animate-slide-down">
+          <div className="lg:hidden absolute top-full left-0 right-0 bg-black/95 backdrop-blur-xl border-t border-white/20 animate-slide-down shadow-2xl">
             <div className="px-4 py-6 space-y-4">
               {/* Mobile Search */}
               <form onSubmit={handleSearch} className="relative">
@@ -309,9 +310,9 @@ const Header = () => {
                   placeholder="Search..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e?.target?.value)}
-                  className="w-full px-4 py-3 pl-10 bg-surface/50 border border-border rounded-lg text-text-primary placeholder-text-secondary focus:outline-none focus:ring-2 focus:ring-primary/50"
+                  className="w-full px-4 py-3 pl-10 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-white/50 focus:border-white/50"
                 />
-                <Icon name="Search" size={18} className="absolute left-3 top-3.5 text-text-secondary" />
+                <Icon name="Search" size={18} className="absolute left-3 top-3.5 text-white/70" />
               </form>
 
               {/* Mobile Navigation Items */}
@@ -322,14 +323,36 @@ const Header = () => {
                     onClick={() => handleNavigation(item?.path)}
                     className={`w-full flex items-center space-x-3 px-4 py-3 rounded-lg transition-all duration-200 ${
                       isActivePath(item?.path)
-                        ? 'bg-primary/20 text-primary border border-primary/30' :'text-text-secondary hover:text-text-primary hover:bg-surface/50'
+                        ? 'bg-white/20 text-white border border-white/40 font-semibold' :'text-white/80 hover:text-white hover:bg-white/10 border border-transparent'
                     }`}
                   >
                     <Icon name={item?.icon} size={20} />
-                    <span className="font-medium">{item?.name}</span>
+                    <span className="font-medium text-base">{item?.name}</span>
                   </button>
                 ))}
               </nav>
+
+              {/* Mobile Auth Buttons (if not authenticated) */}
+              {!isAuthenticated && (
+                <div className="pt-4 border-t border-white/20 space-y-2">
+                  <Button 
+                    variant="ghost" 
+                    size="md" 
+                    onClick={() => { navigate('/auth'); setIsMenuOpen(false); }}
+                    className="w-full bg-white/10 hover:bg-white/20 text-white border border-white/30"
+                  >
+                    Sign In
+                  </Button>
+                  <Button 
+                    variant="default" 
+                    size="md" 
+                    onClick={() => { navigate('/auth'); setIsMenuOpen(false); }}
+                    className="w-full bg-white text-black hover:bg-white/90"
+                  >
+                    Sign Up
+                  </Button>
+                </div>
+              )}
             </div>
           </div>
         )}

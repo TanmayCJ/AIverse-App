@@ -12,24 +12,24 @@ const DeveloperHighlight = ({ developer, type, rank }) => {
         return {
           title: 'Developer of the Month',
           icon: 'Calendar',
-          gradient: 'from-accent to-primary',
-          bgGradient: 'from-accent/20 to-primary/20',
+          gradient: 'from-gray-700 to-gray-900',
+          bgGradient: 'from-gray-800/20 to-gray-900/20',
           period: 'September 2025'
         };
       case 'year':
         return {
           title: 'Developer of the Year',
           icon: 'Trophy',
-          gradient: 'from-warning to-error',
-          bgGradient: 'from-warning/20 to-error/20',
+          gradient: 'from-gray-600 to-gray-800',
+          bgGradient: 'from-gray-700/20 to-gray-800/20',
           period: '2025'
         };
       default:
         return {
           title: 'Top Developer',
           icon: 'Award',
-          gradient: 'from-primary to-secondary',
-          bgGradient: 'from-primary/20 to-secondary/20',
+          gradient: 'from-gray-700 to-gray-900',
+          bgGradient: 'from-gray-800/20 to-gray-900/20',
           period: 'Current'
         };
     }
@@ -75,7 +75,7 @@ const DeveloperHighlight = ({ developer, type, rank }) => {
               className="w-full h-full object-cover"
             />
           </div>
-          <div className="absolute -bottom-1 -right-1 w-6 h-6 bg-success rounded-full border-2 border-background flex items-center justify-center">
+          <div className="absolute -bottom-1 -right-1 w-6 h-6 bg-gray-400 rounded-full border-2 border-background flex items-center justify-center">
             <Icon name="Check" size={12} className="text-white" />
           </div>
         </div>
@@ -94,13 +94,13 @@ const DeveloperHighlight = ({ developer, type, rank }) => {
           <div className="text-text-secondary text-sm">Total Points</div>
         </div>
         <div className="text-center">
-          <div className="text-2xl font-bold text-accent">
+          <div className="text-2xl font-bold text-gray-300">
             {developer?.challengesCompleted}
           </div>
           <div className="text-text-secondary text-sm">Challenges</div>
         </div>
         <div className="text-center">
-          <div className="text-2xl font-bold text-success">
+          <div className="text-2xl font-bold text-gray-300">
             {developer?.streak}
           </div>
           <div className="text-text-secondary text-sm">Day Streak</div>
@@ -113,7 +113,7 @@ const DeveloperHighlight = ({ developer, type, rank }) => {
             key={index}
             className="flex items-center space-x-1 px-3 py-1 bg-surface/50 rounded-full border border-border"
           >
-            <Icon name="Award" size={14} className="text-accent" />
+            <Icon name="Award" size={14} className="text-gray-400" />
             <span className="text-text-secondary text-xs">{achievement}</span>
           </div>
         ))}

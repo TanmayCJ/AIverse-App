@@ -24,28 +24,28 @@ const StatsSection = () => {
       icon: 'Users',
       label: 'Active Members',
       suffix: '',
-      color: 'from-primary to-primary-600'
+      color: 'from-gray-700 to-gray-800'
     },
     {
       key: 'events',
       icon: 'Calendar',
       label: 'Events Hosted',
       suffix: '',
-      color: 'from-accent to-accent-600'
+      color: 'from-gray-600 to-gray-700'
     },
     {
       key: 'challenges',
       icon: 'Zap',
       label: 'Weekly Challenges',
       suffix: '+',
-      color: 'from-secondary to-secondary-600'
+      color: 'from-gray-500 to-gray-600'
     },
     {
       key: 'articles',
       icon: 'BookOpen',
       label: 'Technical Articles',
       suffix: '+',
-      color: 'from-success to-success-600'
+      color: 'from-gray-600 to-gray-700'
     }
   ];
 
@@ -175,7 +175,7 @@ const StatsSection = () => {
             <div className="glass-card">
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
                 <div className="space-y-3">
-                  <div className="w-12 h-12 bg-gradient-to-br from-warning to-warning-600 rounded-xl flex items-center justify-center mx-auto">
+                  <div className="w-12 h-12 bg-gradient-to-br from-gray-600 to-gray-700 rounded-xl flex items-center justify-center mx-auto">
                     <Icon name="Award" size={24} className="text-white" />
                   </div>
                   <h3 className="text-xl font-bold text-text-primary">Top Rated Platform</h3>
@@ -183,7 +183,7 @@ const StatsSection = () => {
                 </div>
 
                 <div className="space-y-3">
-                  <div className="w-12 h-12 bg-gradient-to-br from-error to-error-600 rounded-xl flex items-center justify-center mx-auto">
+                  <div className="w-12 h-12 bg-gradient-to-br from-gray-500 to-gray-600 rounded-xl flex items-center justify-center mx-auto">
                     <Icon name="TrendingUp" size={24} className="text-white" />
                   </div>
                   <h3 className="text-xl font-bold text-text-primary">Fastest Growing</h3>
@@ -191,7 +191,7 @@ const StatsSection = () => {
                 </div>
 
                 <div className="space-y-3">
-                  <div className="w-12 h-12 bg-gradient-to-br from-primary to-primary-600 rounded-xl flex items-center justify-center mx-auto">
+                  <div className="w-12 h-12 bg-gradient-to-br from-gray-700 to-gray-800 rounded-xl flex items-center justify-center mx-auto">
                     <Icon name="Globe" size={24} className="text-white" />
                   </div>
                   <h3 className="text-xl font-bold text-text-primary">Global Reach</h3>

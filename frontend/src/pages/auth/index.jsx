@@ -174,7 +174,7 @@ const AuthPage = () => {
                       </div>
                       
                       <div className="flex items-start space-x-4">
-                        <div className="w-12 h-12 rounded-full bg-gradient-to-br from-green-500 to-green-700 flex items-center justify-center flex-shrink-0">
+                        <div className="w-12 h-12 rounded-full bg-gradient-to-br from-gray-400 to-gray-600 flex items-center justify-center flex-shrink-0">
                           <Icon name="Users" size={24} className="text-white" />
                         </div>
                         <div>
@@ -369,7 +369,7 @@ const AuthPage = () => {
                       variant="primary"
                       fullWidth
                       disabled={loading}
-                      className={`mt-6 ${mode === 'login' ? 'bg-purple-600 hover:bg-purple-700' : 'bg-orange-600 hover:bg-orange-700'}`}
+                      className={`mt-6 ${mode === 'login' ? 'bg-gray-800 hover:bg-gray-900' : 'bg-gray-700 hover:bg-gray-800'}`}
                     >
                       {loading ? (
                         <span className="flex items-center justify-center">
@@ -398,7 +398,7 @@ const AuthPage = () => {
                       type="button"
                       onClick={switchMode}
                       className={`mt-4 text-sm font-medium ${
-                        mode === 'login' ? 'text-purple-500 hover:text-purple-400' : 'text-orange-500 hover:text-orange-400'
+                        mode === 'login' ? 'text-gray-300 hover:text-white' : 'text-gray-400 hover:text-gray-200'
                       } transition-colors`}
                       disabled={loading}
                     >
